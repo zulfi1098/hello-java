@@ -1,5 +1,5 @@
 
- node  {
+ node('firstNode') {
 	stage('Build') {
 		echo "Build"
 		sh "ls -la ${pwd()}"
@@ -30,7 +30,7 @@
 
 
 
- node  {
+ node('secondNode')  {
 
 	stage('Production') {
 		echo "Production"
