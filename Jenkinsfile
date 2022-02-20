@@ -33,8 +33,8 @@
 
 	stage('Production') {
 		echo "Test"
-		sleep 30  
 		sh "ls -la ${pwd()}/output"
+		sh "cat ${pwd()}/output/somefile"
 	}
 
 }
