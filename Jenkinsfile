@@ -1,4 +1,3 @@
-pipeline {
  node {
 	stage('Build') {
 		echo "Build"
@@ -31,7 +30,7 @@ pipeline {
 
 
  node  {
- stages {
+ 
 	 stage('Production') {
 			echo "Production"
 			dir('firstStash'){
@@ -46,7 +45,3 @@ pipeline {
  
  }
 	
-
-}
-
-}
