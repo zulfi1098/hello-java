@@ -14,7 +14,10 @@ pipeline {
             agent any
             steps { initialize1() }
         }
-        
+        stage("Init2") {
+            agent any
+            steps { initialize1() }
+        }
     }
 }
 def initialize1() {
