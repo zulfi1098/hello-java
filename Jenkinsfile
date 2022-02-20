@@ -1,7 +1,6 @@
-pipeline {
- agent any
+stage "first step on first node"
 
- node {
+ node('Node1') {
 	stage('Build') {
 		echo "Build"
 	}
@@ -13,5 +12,16 @@ pipeline {
 	}
 }
 
-}
+stage "second step on second node"
 
+ node('Node2') {
+	stage('Build') {
+		echo "Build"
+	}
+	stage('Test') {
+		echo "Test"
+	}
+	stage('Deploy') {
+		echo "Deploy"
+	}
+}
