@@ -12,12 +12,14 @@ pipeline {
     stages {
         stage("Init") {
             agent any
-            steps { initialize() }
+            steps { initialize1() }
         }
         
     }
 }
-
+def initialize1() {
+    echo "Test"
+}
 
 // ================================================================================================
 // Initialization steps
