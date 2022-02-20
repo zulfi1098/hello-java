@@ -6,6 +6,7 @@
 		sh "mkdir -p output"
 		writeFile file: "output/somefile", text: "hello world"
 		sh "ls -la ${pwd()}"
+		stash name: "firstStash", includes: "output/*"
 	}
 	stage('Test') {
 		echo "Test"
@@ -32,7 +33,10 @@
  node  {
 
 	stage('Production') {
-		echo "Test"
+		echo "Production"
+		dir('firstStash'){
+			unstash "firstStash"
+		}
 		sh "ls -la ${pwd()}/output"
 		sh "cat ${pwd()}/output/somefile"
 	}
