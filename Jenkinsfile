@@ -1,5 +1,5 @@
 
- node('firstNode') {
+ node {
 	stage('Build') {
 		echo "Build"
 		sh "ls -la ${pwd()}"
@@ -30,16 +30,15 @@
 
 
 
- node('secondNode')  {
+ node  {
 
 	stage('Production') {
 		echo "Production"
 		dir('firstStash'){
 			unstash "firstStash"
 		}
-		sh "ls -la ${pwd()}/output"
 		sh "ls -la ${pwd()}"
-		sh "cat ${pwd()}/output/somefile"
+		sh "ls -la ${pwd()}/first-stash"
 	}
 
 }
