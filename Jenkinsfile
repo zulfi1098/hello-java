@@ -28,3 +28,13 @@
 }
 
 
+
+ node  {
+
+	stage('Production') {
+		echo "Test"
+		sleep 30  
+		sh "ls -la ${pwd()}/output"
+	}
+
+}
