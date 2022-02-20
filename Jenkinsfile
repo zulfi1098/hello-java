@@ -5,13 +5,13 @@
 		sh "ls -la ${pwd()}"
 		sh "mkdir -p output"
 		writeFile file: "output/somefile", text: "hello world"
-		sh "ls -la ${pwd()}"
 		stash name: "firstStash", includes: "output/*"
 	}
 	stage('Test') {
 		echo "Test"
 		sleep 30  
 		sh "ls -la ${pwd()}/output"
+		sh "ls -la ${pwd()}"
 	}
 	stage('Deploy') {
 		echo "Deploy"
@@ -38,6 +38,7 @@
 			unstash "firstStash"
 		}
 		sh "ls -la ${pwd()}/output"
+		sh "ls -la ${pwd()}"
 		sh "cat ${pwd()}/output/somefile"
 	}
 
