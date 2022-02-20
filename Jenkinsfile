@@ -4,12 +4,12 @@ import groovy.json.JsonSlurper
 import java.net.URL
 
 pipeline {
-             agent any
-             stages {
+ agent any
+     stages {
                          stage ("build") {
                                      Steps {
-                                                 echo "building the application.."
+                                                 echo "Build"
                                      }
                          }
-                }
+            }
 }
