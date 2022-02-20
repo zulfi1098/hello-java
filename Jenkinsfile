@@ -6,7 +6,7 @@
 	}
 	stage('Test') {
 		echo "Test"
-		sleep 40000
+		sleep 30
 	}
 	stage('Deploy') {
 		echo "Deploy"
