@@ -1,17 +1,17 @@
 pipeline {
              agent any
              stages {
-                         stage ("build") {
+                         stage ("gradle build") {
                                      Steps {
                                                  echo "building the application.."
                                      }
                          }
-             stage ("test") {
+             stage ("gradle test") {
                                      Steps {
                                                  echo "testing the application.."
                                      }
                          }
-             stage ("deploy") {
+             stage ("gradle deploy") {
                                      Steps {
                                                  echo "deploying the application.."
                                      }
