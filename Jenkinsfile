@@ -28,20 +28,3 @@
 }
 
 
-
- node  {
- 
-	 stage('Production') {
-			echo "Production"
-			dir('firstStash'){
-				unstash "firstStash"
-			}
-			sh "ls -la ${pwd()}"
-		}
-		 stage('Production2') {
-			echo "Production2"
-			
-		}
- 
- }
-	
