@@ -1,8 +1,8 @@
-stage "first step on first node"
 
- node('Node1') {
+ node  {
 	stage('Build') {
 		echo "Build"
+		sh "ls -la ${pwd()}"
 	}
 	stage('Test') {
 		echo "Test"
@@ -12,16 +12,15 @@ stage "first step on first node"
 	}
 }
 
-stage "second step on second node"
 
- node('Node2') {
+ node {
 	stage('Build') {
-		echo "Build"
+		echo "Build1"
 	}
 	stage('Test') {
-		echo "Test"
+		echo "Test1"
 	}
-	stage('Deploy') {
+	stage('Deploy1') {
 		echo "Deploy"
 	}
 }
