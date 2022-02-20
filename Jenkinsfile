@@ -31,14 +31,20 @@
 
 
  node  {
-
-	stage('Production') {
-		echo "Production"
-		dir('firstStash'){
-			unstash "firstStash"
+ stages {
+	 stage('Production') {
+			echo "Production"
+			dir('firstStash'){
+				unstash "firstStash"
+			}
+			sh "ls -la ${pwd()}"
 		}
-		sh "ls -la ${pwd()}"
-		sh "ls -la ${pwd()}/first-stash"
-	}
+		 stage('Production2') {
+			echo "Production2"
+			
+		}
+ 
+ }
+	
 
 }
