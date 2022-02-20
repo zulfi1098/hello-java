@@ -18,7 +18,7 @@
 	}
 	stage('Ping') {
 		echo "Deploy"
-		sh "ping google.com"
+		echo "ping google.com"
 	}
 }
 
