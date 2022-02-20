@@ -10,17 +10,16 @@
 	stage('Deploy') {
 		echo "Deploy"
 	}
-}
-
-
- node {
-	stage('Build') {
-		echo "Build1"
+	stage('PostDeploy') {
+		echo "PostDeploy"
 	}
-	stage('Test') {
-		echo "Test1"
+	stage('CleanUpResource') {
+		echo "CleanUpResource"
 	}
-	stage('Deploy1') {
+	stage('Ping') {
 		echo "Deploy"
+		sh "ping google.com"
 	}
 }
+
+
