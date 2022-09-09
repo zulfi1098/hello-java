@@ -1,0 +1,13 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - mkdir build-output
+      - cp -R <path>/public/ build-output
+  post_build:
+    commands:
+      - mv build-output/**/* ./
+      - mv build-output/* ./
+      - rm -R build-output *.yml LICENSE README* .git*
+
